@@ -1,0 +1,9 @@
+#!/bin/sh -e
+if [ -z "$VDE_DVTM_PIPE" ]; then
+  echo 'Please run this from within vde' >&2
+  exit 1
+fi
+
+VISUAL="${VISUAL:-"${EDITOR:-vis}"}"
+
+echo "create '$(/usr/bin/printf '%q ' "$VISUAL" "$@")'" >"$VDE_DVTM_PIPE"

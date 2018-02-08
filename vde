@@ -1,0 +1,4 @@
+#!/bin/sh -e
+export VDE_DVTM_PIPE="$(mktemp -d)/fifo"
+export ROVER_VISUAL=vde-editor
+dvtm -c "$VDE_DVTM_PIPE" vde-rover
